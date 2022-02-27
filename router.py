@@ -11,4 +11,5 @@ def connect_locations(locations: list, connect, need_bridge_to_connect):
     for loc_1 in locations:
         for loc_2 in locations:
             if loc_1 != loc_2:
+                print("Connecting", loc_1.x, loc_1.y, "with", loc_2.x, loc_2.y)
                 connect(loc_1, loc_2)

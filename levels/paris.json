@@ -6,12 +6,22 @@
     },
     "locations": [
         {
+            "name": "Effeil Tower",
+            "icon_path": "",
             "x": 100,
             "y": 145
         },
         {
-            "x": 1500,
-            "y": 560
+            "name": "Montparnasse Tower",
+            "icon_path": "",
+            "x": 800,
+            "y": 345
+        },
+        {
+            "name": "Matignon",
+            "icon_path": "",
+            "x": 600,
+            "y": 500
         }
     ]
 }
