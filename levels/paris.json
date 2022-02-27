@@ -1,0 +1,17 @@
+{
+    "name": "Paris",
+    "dimensions": {
+        "height": 1080,
+        "width": 1920
+    },
+    "locations": [
+        {
+            "x": 100,
+            "y": 145
+        },
+        {
+            "x": 1500,
+            "y": 560
+        }
+    ]
+}
