@@ -1,27 +1,41 @@
 {
     "name": "Paris",
-    "dimensions": {
-        "height": 1080,
-        "width": 1920
-    },
+    "bridges": [],
     "locations": [
         {
             "name": "Effeil Tower",
             "icon_path": "",
+            "color": "red",
             "x": 100,
             "y": 145
         },
         {
             "name": "Montparnasse Tower",
             "icon_path": "",
+            "color": "pink",
             "x": 800,
-            "y": 345
+            "y": 305
         },
         {
             "name": "Matignon",
             "icon_path": "",
+            "color": "green",
             "x": 600,
-            "y": 500
+            "y": 430
+        },
+        {
+            "name": "Louvre",
+            "icon_path": "",
+            "color": "deep_blue",
+            "x": 270,
+            "y": 340
+        },
+        {
+            "name": "Bon Marché",
+            "icon_path": "",
+            "color": "orange",
+            "x": 340,
+            "y": 100
         }
     ]
 }
