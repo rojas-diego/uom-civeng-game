@@ -1,0 +1,5 @@
+
+WINDOW_WIDTH = 1080
+WINDOW_HEIGHT = 620
+
+UOM_LOGO_PATH = 'assets/uom_logo.png'
