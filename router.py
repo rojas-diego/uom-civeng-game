@@ -1,3 +1,5 @@
+import random
+
 
 def connect_locations(locations: list, connect, need_bridge_to_connect):
     """
@@ -10,5 +12,5 @@ def connect_locations(locations: list, connect, need_bridge_to_connect):
     # This solution is not optimal at all because it uses too much resources.
     for loc_1 in locations:
         for loc_2 in locations:
-            if loc_1 != loc_2:
+            if loc_1 != loc_2 and random.randint(0, 1) == 1:
                 connect(loc_1, loc_2)
