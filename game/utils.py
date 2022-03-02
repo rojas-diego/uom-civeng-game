@@ -1,4 +1,5 @@
 from queue import PriorityQueue
+from collections import deque
 
 
 class Location():
@@ -14,6 +15,9 @@ class Location():
             return self.x == other.x and self.y == other.y and self.name == other.name and self.icon_path == other.icon_path and self.color == other.color
         return False
 
+    def __str__(self):
+        return self.name + " (" + str(self.x) + "," + str(self.y) + ")"
+
 
 class Connection():
     def __init__(self, a: Location, b: Location):
@@ -26,6 +30,9 @@ class Connection():
             return (self.a == other.a and self.b == other.b) or (self.a == other.b and self.b == other.a)
         return False
 
+    def __str__(self):
+        return str(self.a) + ' <-> ' + str(self.b)
+
     def distance(self):
         return ((((self.b.x - self.a.x)**2) + ((self.b.y-self.a.y)**2))**0.5)
 
@@ -36,7 +43,7 @@ class LocationGraph():
         self.connections = []
 
     def add_connection(self, a: Location, b: Location):
-        pass
+        self.connections.append(Connection(a, b))
 
     def pathfind(self, start: Location, end: Location):
         start_idx = self.__get_location_index(start)
@@ -51,10 +58,10 @@ class LocationGraph():
         g_score[start_idx] = 0  # Distance to itself is zero
         f_score[start_idx] = self.__distance(start_idx, end_idx)
 
-        while not open.empty():
+        while len(open) > 0:
             current_idx = self.__get_lowest_score_node(open, f_score)
             if current_idx == end_idx:
-                raise Exception('success')
+                return self.__reconstruct_path(came_from, current_idx)
             open = [j for _, j in enumerate(open) if j != current_idx]
             neighbours = self.__get_loc_neighbours(self.locations[current_idx])
             for n in neighbours:
@@ -68,8 +75,31 @@ class LocationGraph():
                     if n not in open:
                         open.append(n)
 
+    def __reconstruct_path(self, came_from: dict, current):
+        nodes = deque()
+        nodes.appendleft(current)
+        while current in came_from.keys():
+            current = came_from[current]
+            nodes.appendleft(current)
+        connections = []
+        for i in range(len(nodes) - 1):
+            connections.append(
+                self.__get_connection_between(nodes[i], nodes[i + 1]))
+        for i in range(len(connections)):
+            print(connections[i])
+        return connections
+
+    def __get_connection_between(self, a_idx, b_idx):
+        con = None
+        for i in range(len(self.connections)):
+            if self.connections[i].a == self.locations[a_idx] and self.connections[i].b == self.locations[b_idx]:
+                con = self.connections[i]
+            if self.connections[i].b == self.locations[a_idx] and self.connections[i].a == self.locations[b_idx]:
+                con = self.connections[i]
+        return con
+
     def __distance(self, current_idx, end_idx):
-        return Connection(self, self.locations[current_idx], self.locations[end_idx]).distance()
+        return Connection(self.locations[current_idx], self.locations[end_idx]).distance()
 
     def __get_location_index(self, a: Location):
         for i in range(len(self.locations)):
@@ -91,7 +121,8 @@ class LocationGraph():
         for i in range(len(self.connections)):
             if self.connections[i].a == loc:
                 neighbours.append(
-                    self.__get_location_index(self.connections[i].a))
+                    self.__get_location_index(self.connections[i].b))
             if self.connections[i].b == loc:
                 neighbours.append(
-                    self.__get_location_index(self.connections[i].b))
+                    self.__get_location_index(self.connections[i].a))
+        return neighbours

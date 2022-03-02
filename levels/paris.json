@@ -3,7 +3,7 @@
     "bridges": [],
     "locations": [
         {
-            "name": "Effeil Tower",
+            "name": "Eiffel Tower",
             "icon_path": "",
             "color": "red",
             "x": 100,
@@ -36,6 +36,27 @@
             "color": "orange",
             "x": 340,
             "y": 100
+        },
+        {
+            "name": "Sacré Coeur",
+            "icon_path": "",
+            "color": "blue",
+            "x": 600,
+            "y": 183
+        },
+        {
+            "name": "Petit Palais",
+            "icon_path": "",
+            "color": "deep_blue",
+            "x": 444,
+            "y": 90
+        },
+        {
+            "name": "Tuileries",
+            "icon_path": "",
+            "color": "pink",
+            "x": 240,
+            "y": 240
         }
     ]
 }
