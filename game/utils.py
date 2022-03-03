@@ -1,5 +1,6 @@
 from queue import PriorityQueue
 from collections import deque
+import statistics
 
 
 class Location():
@@ -85,8 +86,6 @@ class LocationGraph():
         for i in range(len(nodes) - 1):
             connections.append(
                 self.__get_connection_between(nodes[i], nodes[i + 1]))
-        for i in range(len(connections)):
-            print(connections[i])
         return connections
 
     def __get_connection_between(self, a_idx, b_idx):
