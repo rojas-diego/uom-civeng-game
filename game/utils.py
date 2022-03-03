@@ -32,7 +32,7 @@ class Connection():
         return False
 
     def __str__(self):
-        return str(self.a) + ' <-> ' + str(self.b)
+        return str(self.a) + ' <-> ' + str(self.b) + ' (Crossed ' + str(self.times_used) + ' times)'
 
     def distance(self):
         return ((((self.b.x - self.a.x)**2) + ((self.b.y-self.a.y)**2))**0.5)

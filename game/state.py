@@ -17,6 +17,7 @@ class State():
         self.max_cost = 0
         self.timer = 0
         self.step = 0
+        self.network_error = ''
         self.steps = [
             self.wait_step,
             self.load_connections_step,
@@ -115,6 +116,7 @@ class State():
                         self.test_network_done.append(Connection(loc1, loc2))
                         directions = self.graph.pathfind(loc1, loc2)
                         if directions == None:
+                            self.network_error = "Some locations aren't connected"
                             return
                         loads = []
                         for con in self.graph.connections:
@@ -137,6 +139,10 @@ class State():
         self.draw_locations()
 
     def draw_header(self):
+        warning_text_sf = self.font.render(self.network_error, True, RED)
+        text_rect = warning_text_sf.get_rect(
+            center=(self.window.get_rect().center[0], HEADER_HEIGHT + 10))
+        self.window.blit(warning_text_sf, text_rect)
         self.window.blit(self.assets.uom_logo, (0, 0))
         self.draw_header_value('Average Travel Time',
                                str(math.floor(self.total_travel_time_mins / self.num_travels)) + 'min' if self.num_travels else '0min', 500, GREY)
