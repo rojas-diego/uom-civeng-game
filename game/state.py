@@ -169,12 +169,12 @@ class State():
             pygame.draw.circle(
                 self.window, COLORS[loc.color], (loc.x, loc.y), 10)
             text_surface = self.font.render(
-                loc.name, True, (0, 0, 0))
+                loc.name, True, (0, 0, 0), EXTREME_LIGHT_GREY)
             text_rect = text_surface.get_rect(
                 center=(loc.x, loc.y + 20))
             self.window.blit(text_surface, text_rect)
 
     def draw_connections(self):
         for con in self.graph.connections:
-            pygame.draw.line(self.window, GREEN if con in self.test_network_highlight else GREY,
-                             (con.a.x, con.a.y), (con.b.x, con.b.y), 4 if con in self.test_network_highlight else 2)
+            pygame.draw.line(self.window, GREEN if con in self.test_network_highlight else LIGHT_GREY,
+                             (con.a.x, con.a.y), (con.b.x, con.b.y), 4 if con in self.test_network_highlight else 1)

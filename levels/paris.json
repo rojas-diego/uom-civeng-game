@@ -3,60 +3,95 @@
     "bridges": [],
     "locations": [
         {
-            "name": "Eiffel Tower",
+            "name": "Tour Eiffel",
+            "x": 484,
+            "y": 506,
             "icon_path": "",
-            "color": "red",
-            "x": 100,
-            "y": 145
+            "color": "green"
         },
         {
-            "name": "Montparnasse Tower",
+            "name": "Tour Montparnasse",
+            "x": 926,
+            "y": 389,
             "icon_path": "",
-            "color": "pink",
-            "x": 800,
-            "y": 305
+            "color": "deep_blue"
+        },
+        {
+            "name": "\u00c9lys\u00e9e",
+            "x": 205,
+            "y": 267,
+            "icon_path": "",
+            "color": "grey"
         },
         {
             "name": "Matignon",
+            "x": 439,
+            "y": 226,
             "icon_path": "",
-            "color": "green",
-            "x": 600,
-            "y": 430
+            "color": "black"
         },
         {
-            "name": "Louvre",
+            "name": "Trocad\u00e9ro",
+            "x": 708,
+            "y": 140,
             "icon_path": "",
-            "color": "deep_blue",
-            "x": 270,
-            "y": 340
+            "color": "pinkeye"
         },
         {
-            "name": "Bon Marché",
+            "name": "Bon March\u00e9",
+            "x": 1036,
+            "y": 235,
             "icon_path": "",
-            "color": "orange",
-            "x": 340,
-            "y": 100
+            "color": "pinkeye"
         },
         {
-            "name": "Sacré Coeur",
+            "name": "Sacr\u00e9 Coeur",
+            "x": 613,
+            "y": 261,
             "icon_path": "",
-            "color": "blue",
-            "x": 600,
-            "y": 183
-        },
-        {
-            "name": "Petit Palais",
-            "icon_path": "",
-            "color": "deep_blue",
-            "x": 444,
-            "y": 90
+            "color": "violet"
         },
         {
             "name": "Tuileries",
+            "x": 181,
+            "y": 508,
             "icon_path": "",
-            "color": "pink",
-            "x": 240,
-            "y": 240
+            "color": "orange"
+        },
+        {
+            "name": "Louvre",
+            "x": 702,
+            "y": 481,
+            "icon_path": "",
+            "color": "deep_blue"
+        },
+        {
+            "name": "L'orangerie",
+            "x": 23,
+            "y": 248,
+            "icon_path": "",
+            "color": "red"
+        },
+        {
+            "name": "Panth\u00e9on",
+            "x": 576,
+            "y": 37,
+            "icon_path": "",
+            "color": "grey"
+        },
+        {
+            "name": "Arc de Triomphe",
+            "x": 90,
+            "y": 363,
+            "icon_path": "",
+            "color": "black"
+        },
+        {
+            "name": "L'Op\u00e9ra",
+            "x": 1028,
+            "y": 442,
+            "icon_path": "",
+            "color": "blue"
         }
     ]
 }

@@ -34,6 +34,8 @@ PINKEYE = pygame.Color(255, 51, 141)
 RED = pygame.Color(255, 51, 94)
 GREEN = pygame.Color(46, 176, 14)
 GREY = pygame.Color(100, 100, 100)
+LIGHT_GREY = pygame.Color(150, 150, 150)
+EXTREME_LIGHT_GREY = pygame.Color(230, 230, 230)
 
 COLORS = {
     'orange': ORANGE,
