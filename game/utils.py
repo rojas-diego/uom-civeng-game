@@ -4,16 +4,15 @@ import statistics
 
 
 class Location():
-    def __init__(self, x: int, y: int, name: str, icon_path: str, color: str):
+    def __init__(self, x: int, y: int, name: str, color: str):
         self.x = x
         self.y = y
         self.name = name
-        self.icon_path = icon_path
         self.color = color
 
     def __eq__(self, other):
         if isinstance(other, Location):
-            return self.x == other.x and self.y == other.y and self.name == other.name and self.icon_path == other.icon_path and self.color == other.color
+            return self.x == other.x and self.y == other.y and self.name == other.name and self.color == other.color
         return False
 
     def __str__(self):

@@ -46,11 +46,10 @@ class State():
         self.locations = []
         for loc in self.config['locations']:
             self.locations.append(
-                Location(loc['x'], loc['y'] + HEADER_HEIGHT, loc['name'], loc['icon_path'], loc['color']))
+                Location(loc['x'], loc['y'] + HEADER_HEIGHT, loc['name'], loc['color']))
 
     def connect_locations(self):
-        connect_locations(self.locations, self.connect_handler,
-                          self.need_bridge_to_connect_handler)
+        connect_locations(self.locations, self.connect_handler)
 
     def connect_handler(self, a, b):
         for con in self.connections_buffer:
@@ -59,9 +58,6 @@ class State():
             if con[1] == a and con[0] == b:
                 return
         self.connections_buffer.append((a, b))
-
-    def need_bridge_to_connect_handler(self, a, b) -> bool:
-        return True
 
     def update(self):
         self.handle_events()

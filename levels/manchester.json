@@ -1,68 +1,59 @@
 {
     "name": "Manchester",
-    "bridges": [],
+    "background_path": "assets/manchester.png",
     "locations": [
         {
             "name": "Picadilly Station",
             "x": 945,
             "y": 300,
-            "icon_path": "",
             "color": "pinkeye"
         },
         {
             "name": "Engineering Building",
             "x": 102,
             "y": 146,
-            "icon_path": "",
             "color": "green"
         },
         {
             "name": "Central Library",
             "x": 709,
             "y": 255,
-            "icon_path": "",
             "color": "purple"
         },
         {
             "name": "Cathedral",
             "x": 918,
             "y": 198,
-            "icon_path": "",
             "color": "red"
         },
         {
             "name": "Arena",
             "x": 1012,
             "y": 474,
-            "icon_path": "",
             "color": "pinkeye"
         },
         {
             "name": "Gay Village",
             "x": 652,
             "y": 144,
-            "icon_path": "",
             "color": "grey"
         },
         {
             "name": "Chinatown",
             "x": 342,
             "y": 476,
-            "icon_path": "",
             "color": "pink"
         },
         {
             "name": "Albert Square",
             "x": 320,
             "y": 313,
-            "icon_path": "",
             "color": "black"
         },
         {
             "name": "Victoria Baths",
             "x": 809,
             "y": 105,
-            "icon_path": "",
             "color": "green"
         }
     ]

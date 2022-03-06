@@ -33,7 +33,6 @@ while True:
         'name': line,
         'x': get_random_value(BOARD_WIDTH),
         'y': get_random_value(BOARD_HEIGHT),
-        'icon_path': '',
         'color': get_random_color(),
     })
 
