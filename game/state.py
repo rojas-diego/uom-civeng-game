@@ -52,6 +52,8 @@ class State():
         connect_locations(self.locations, self.connect_handler)
 
     def connect_handler(self, a, b):
+        if a == b:
+            return
         for con in self.connections_buffer:
             if con[0] == a and con[1] == b:
                 return
@@ -117,7 +119,11 @@ class State():
                         loads = []
                         for con in self.graph.connections:
                             loads.append(con.times_used)
-                        self.traffic_congestion = statistics.variance(loads)
+                        if len(loads) > 1:
+                            self.traffic_congestion = statistics.variance(
+                                loads)
+                        else:
+                            self.traffic_congestion = 0
                         self.num_travels += 1
                         self.total_travel_time_mins += len(
                             directions) * CHANGE_TRAIN_TIME

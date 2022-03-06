@@ -2,9 +2,13 @@
 
 Code-it-yourself introduction to civil Engineering!
 
+## Introduction
+
+Small introduction about the scope of your project and the concept of the game.
+
 ## Installation
 
-Python version >= 3.x required.
+To play the game, you must have Python 3 installed on your computer.
 
 ```
 git clone git@github.com:rojasdiegopro/uom-civeng-game.git
@@ -15,5 +19,5 @@ pip install -r requirements.txt
 ## Launch
 
 ```
-python3 run.py
+python3 run.py levels/manchester.json
 ```
