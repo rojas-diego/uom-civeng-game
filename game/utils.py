@@ -74,6 +74,7 @@ class LocationGraph():
                         self.__distance(n, end_idx)
                     if n not in open:
                         open.append(n)
+        return None
 
     def __reconstruct_path(self, came_from: dict, current):
         nodes = deque()
@@ -85,6 +86,7 @@ class LocationGraph():
         for i in range(len(nodes) - 1):
             connections.append(
                 self.__get_connection_between(nodes[i], nodes[i + 1]))
+            connections[-1].times_used += 1
         return connections
 
     def __get_connection_between(self, a_idx, b_idx):

@@ -10,11 +10,17 @@ TICKS_STARTUP = 100
 TICKS_CONNECTIONS = 300
 SHOW_CONNECTION_DELAY = 25
 
-STOP_COST = 0.1
+#### KPI CONSTANTS #################################
+# The cost of a connection
+CONNECTION_COST = 0.1
+# The cost of a pixel worth of railway
 RAILWAY_UNIT_COST = 0.01
 
+# Travelling one pixel takes x minutes.
 RAILWAY_UNIT_TRAVEL_TIME = 0.02
+# Stopping at a location takes x minutes.
 CHANGE_TRAIN_TIME = 2
+####################################################
 
 HEADER_HEIGHT = 80
 HEADER_WIDTH = WINDOW_HEIGHT
