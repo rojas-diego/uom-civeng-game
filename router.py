@@ -24,7 +24,6 @@ def closest_not_connected_neighbour(loc, connections, locations):
         # We make sure that we haven't already connected these two locations.
         already_connected = False
         for connection in connections:
-            print(connection[0], '-', connection[1])
             if (connection[0] == loc and connection[1] == other_loc) or (connection[0] == other_loc and connection[1] == loc):
                 already_connected = True
         if already_connected:
@@ -59,12 +58,8 @@ def connect_locations(locations, connect):
         if neighbour == None:
             continue
 
-        print(loc, "'s closest neighbour is ", neighbour, sep='')
-
         # Connect them
         connect(loc, neighbour)
 
         # Store this new connection in our connections list
         connections.append((loc, neighbour))
-
-        print('Connections count', len(connections))
