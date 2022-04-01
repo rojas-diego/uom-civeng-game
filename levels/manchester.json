@@ -1,6 +1,6 @@
 {
     "name": "Manchester",
-    "background_path": "assets/manchester.png",
+    "background_path": "assets/manchester_background.png",
     "locations": [
         {
             "name": "Picadilly Station",

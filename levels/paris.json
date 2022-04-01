@@ -1,6 +1,6 @@
 {
     "name": "Paris",
-    "background_path": "assets/paris.png",
+    "background_path": "assets/manchester_background.png",
     "locations": [
         {
             "name": "Tour Eiffel",

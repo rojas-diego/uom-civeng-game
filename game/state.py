@@ -16,7 +16,7 @@ class State():
         # Is the game running
         self.active = True
         # The game assets
-        self.assets = Assets()
+        self.assets = Assets(config["background_path"])
         # The cost of the network
         self.cost = 0
         # The congestion rating
@@ -77,7 +77,6 @@ class State():
             for loc2 in self.locations:
                 if loc1 != loc2 and Connection(loc1, loc2) not in self.itineraries_to_test:
                     self.itineraries_to_test.append(Connection(loc1, loc2))
-        print('We must test', len(self.itineraries_to_test), 'itineraries')
 
     def load_config(self):
         """
@@ -234,12 +233,14 @@ class State():
 #### DRAW FUNCTION #################################
 ####################################################
 
-
     def draw(self):
         # Draw everything on screen every frame.
 
         # Draw a white background
         self.window.fill((255, 255, 255))
+        tmp = self.assets.background_image.convert()
+        tmp.set_alpha(128)
+        self.window.blit(tmp, (0, HEADER_HEIGHT))
         # Draw the game header
         self.draw_header()
         # Draw each connection
@@ -289,5 +290,5 @@ class State():
     def draw_connections(self):
         # For each connection draw a grey line.
         for con in self.graph.connections:
-            pygame.draw.line(self.window, GREEN if con in self.test_network_highlight else LIGHT_GREY,
-                             (con.a.x, con.a.y), (con.b.x, con.b.y), 4 if con in self.test_network_highlight else 1)
+            pygame.draw.line(self.window, GREEN if con in self.test_network_highlight else GREY,
+                             (con.a.x, con.a.y), (con.b.x, con.b.y), 6 if con in self.test_network_highlight else 4)
